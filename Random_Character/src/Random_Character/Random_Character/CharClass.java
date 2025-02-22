@@ -24,17 +24,20 @@ public class CharClass {
     private Map<String, String> chosenSubclasses; // Tracks chosen subclass for each class
     private Stats characterStats; // Reference to character stats for multiclass requirements
     private boolean enforceMulticlassRequirements; // Flag to enforce multiclass requirements
-
+    private boolean includeHomebrew;
+    
+    
     public CharClass(int inLevel, int inMaxClasses, Stats stats) throws IOException {
-        this(inLevel, inMaxClasses, stats, true); // By default, enforce multiclass requirements (Always enforce)
+        this(inLevel, inMaxClasses, stats, true, false); // By default, enforce multiclass requirements (Always enforce)
     }
 
-    public CharClass(int inLevel, int inMaxClasses, Stats stats, boolean enforceRequirements) throws IOException {
+    public CharClass(int inLevel, int inMaxClasses, Stats stats, boolean enforceRequirements, boolean includeHomebrew) throws IOException {
         currentLevel = 1; // Minimum Level is 1
         classLevels = new HashMap<>(); //Create a hash map of class levels
         chosenSubclasses = new HashMap<>(); // Chosen subclasses must also be tracked
         characterStats = stats; // A characters stats are important
         enforceMulticlassRequirements = enforceRequirements; //Enforce multiclass rules
+        this.includeHomebrew = includeHomebrew; 
         classes = loadCharClasses(); // Loads DND class data from JSON
         cclass = getRandomClass(); // Randomly selects the class
         level = inLevel; //The level the player selects
@@ -44,7 +47,7 @@ public class CharClass {
 
     // Overloaded constructor for backward compatibility
     public CharClass(int inLevel, int inMaxClasses) throws IOException {
-        this(inLevel, inMaxClasses, null, false);
+        this(inLevel, inMaxClasses, null, false, false);
     }
 
     public void setCharClass(Map<String, Object> setCharClass) {
@@ -62,18 +65,46 @@ public class CharClass {
         List<Map<String, Object>> classList = new ArrayList<>();
         
         try (FileReader reader = new FileReader("ClassList.json")) {
-            // Use Gson to parse the JSON file
             JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
             
             for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject classObject = jsonArray.get(i).getAsJsonObject();
                 
+                // Check if the class itself is homebrew
+                boolean isClassHomebrew = classObject.has("is-homebrew") && 
+                                         classObject.get("is-homebrew").getAsBoolean();
+                
+                // Skip homebrew classes if homebrew is disabled
+                if (isClassHomebrew && !includeHomebrew) {
+                    continue;
+                }
+                
                 String className = classObject.get("class").getAsString();
                 JsonObject subclassesObj = classObject.getAsJsonObject("sub-classes");
                 Map<String, String> subclasses = new HashMap<>();
                 
+                // Parse homebrew subclass flags
+                Map<String, Boolean> homebrewSubclasses = new HashMap<>();
+                if (classObject.has("homebrew-subclasses")) {
+                    JsonObject homebrewObj = classObject.getAsJsonObject("homebrew-subclasses");
+                    for (String key : homebrewObj.keySet()) {
+                        if (homebrewObj.get(key).isJsonPrimitive()) {
+                            homebrewSubclasses.put(key, homebrewObj.get(key).getAsBoolean());
+                        } else if (homebrewObj.get(key).isJsonObject()) {
+                            JsonObject subclassObj = homebrewObj.get(key).getAsJsonObject();
+                            if (subclassObj.has("enabled")) {
+                                homebrewSubclasses.put(key, subclassObj.get("enabled").getAsBoolean());
+                            }
+                        }
+                    }
+                }
+                
+                // Filter subclasses based on homebrew setting
                 for (String key : subclassesObj.keySet()) {
-                    subclasses.put(key, subclassesObj.get(key).getAsString());
+                    boolean isSubclassHomebrew = homebrewSubclasses.getOrDefault(key, false);
+                    if (includeHomebrew || !isSubclassHomebrew) {
+                        subclasses.put(key, subclassesObj.get(key).getAsString());
+                    }
                 }
                 
                 long subclassLevel = classObject.get("subclass-level").getAsLong();
@@ -82,11 +113,12 @@ public class CharClass {
                 classInfo.put("class", className);
                 classInfo.put("sub-classes", subclasses);
                 classInfo.put("subclass-level", subclassLevel);
+                classInfo.put("is-homebrew", isClassHomebrew);
+                classInfo.put("homebrew-subclasses", homebrewSubclasses);
                 
-                // Add default multiclass requirements if not present in JSON
+                // Add multiclass requirements handling as in your original code
                 addDefaultMulticlassRequirements(classInfo, className);
                 
-                // Load stat requirements from JSON if they exist (will override defaults)
                 if (classObject.has("stat-requirements")) {
                     JsonObject requirementsObj = classObject.getAsJsonObject("stat-requirements");
                     Map<String, Object> requirements = new HashMap<>();

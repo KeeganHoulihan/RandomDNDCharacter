@@ -14,7 +14,7 @@ public class Character {
         this.characterAlignment = new Alignment();
         this.characterBackground = new Background();
         // Pass the stats to CharClass for multiclass requirements
-        this.characterClass = new CharClass(x, inMaxClass, characterStats, true);
+        this.characterClass = new CharClass(x, inMaxClass, characterStats, true, false);
         this.characterRace = new Race();
     }
 

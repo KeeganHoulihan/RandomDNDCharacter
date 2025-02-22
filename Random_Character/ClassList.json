@@ -20,8 +20,22 @@
       "subclass-6": "Path of the Storm Herald",
       "subclass-7": "Path of the Totem Warrior",
       "subclass-8": "Path of Wild Magic",
-      "subclass-9": "Path of the Zealot"
+      "subclass-9": "Path of the Zealot",
+	  "subclass-10": "Path of the Ancient Beast",
+	  "subclass-11": "Path of the Kaiju",
+	  "subclass-12": "Path of the Maelstron",
+	  "subclass-13": "Path of the Risen",
+	  "subclass-14": "Path of the Tidebringer",
+	  "subclass-15": "Path of the Experiement"
     },
+	"homebrew-subclasses":{
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true
+	},
     "subclass-level": 3
   },
   {
@@ -34,8 +48,22 @@
       "subclass-5": "College of Spirits",
       "subclass-6": "College of Swords",
       "subclass-7": "College of Valor",
-      "subclass-8": "College of Whispers"
+      "subclass-8": "College of Whispers",
+	  "subclass-9": "College of Bravura",
+	  "subclass-10": "College of Starlight",
+	  "subclass-11": "College of Masks",
+	  "subclass-12": "College of Hanabi",
+	  "subclass-13": "College of Fisher's Tradition",
+	  "subclass-14": "College of Whistlers"
     },
+	"homebrew-subclasses":{
+		"subclass-9": true,
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true
+	},
     "subclass-level": 3
   },
   {
@@ -53,8 +81,22 @@
       "subclass-10": "Peace Domain",
       "subclass-11": "Tempest Domain",
       "subclass-12": "Trickery Domain",
-      "subclass-13": "War Domain"
+      "subclass-13": "War Domain",
+	  "subclass-14": "Sea Domain",
+	  "subclass-15": "Entropy Domain",
+	  "subclass-16": "Shrine Warden Domain",
+	  "subclass-17": "Deep Waters Domain",
+	  "subclass-18": "Harvest Domain",
+	  "subclass-19": "Madness Domain"
     },
+	"homebrew-subclasses":{
+		"subclass-14": true,
+		"subclass-15": true,
+		"subclass-16": true,
+		"subclass-17": true,
+		"subclass-18": true,
+		"subclass-19": true
+	},
     "subclass-level": 1
   },
   {
@@ -66,8 +108,26 @@
       "subclass-4": "Circle of the Shepard",
       "subclass-5": "Circle of Spores",
       "subclass-6": "Circle of Stars",
-      "subclass-7": "Circle of Wildfire"
+      "subclass-7": "Circle of Wildfire",
+	  "subclass-8": "Circle of the Depths",
+	  "subclass-9": "Circle of Scales",
+	  "subclass-10": "Circle of the Yokai",
+	  "subclass-11": "Circle of Swarms",
+	  "subclass-12": "Circle of Tides",
+	  "subclass-13": "Circle of Flowers",
+	  "subclass-14": "Circle of the Old Ways",
+	  "subclass-15": "Circle of Wicker"
     },
+	"homebrew-subclasses":{
+		"subclass-8": true,
+		"subclass-9": true,
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true
+	},
     "subclass-level": 2
   },
   {
@@ -82,8 +142,26 @@
       "subclass-7": "Eldritch Knight",
       "subclass-8": "Psi Warrior",
       "subclass-9": "Rune Knight",
-      "subclass-10": "Samurai"
+      "subclass-10": "Samurai",
+	  "subclass-11": "Battle Angler",
+	  "subclass-12": "Barrow Guard",
+	  "subclass-13": "Buccaneer",
+	  "subclass-14": "Commander",
+	  "subclass-15": "Despoiler",
+	  "subclass-16": "Gravity Knight",
+	  "subclass-17": "Quartermaster",
+	  "subclass-18": "Skeletal Blades"
     },
+	"homebrew-subclasses":{
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true,
+		"subclass-16": true,
+		"subclass-17": true,
+		"subclass-18": true
+	},
     "subclass-level": 3
   },
   {
@@ -97,8 +175,20 @@
       "subclass-6": "Way of the Long Death",
       "subclass-7": "Way of the Open Hand",
       "subclass-8": "Way of the Shadow",
-      "subclass-9": "Way of the Sun Soul"
+      "subclass-9": "Way of the Sun Soul",
+	  "subclass-10": "Way of the Stormdancer",
+	  "subclass-11": "Way of the Warped",
+	  "subclass-12": "Way of the Eight Gates",
+	  "subclass-13": "Way of the Octopus",
+	  "subclass-14": "Way of the Pestilent Haze"
     },
+	"homebrew-subclasses":{
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true
+	},
     "subclass-level": 3
   },
   {
@@ -112,8 +202,24 @@
       "subclass-6": "Oath of Redemption",
       "subclass-7": "Oath of Vengeance",
       "subclass-8": "Oath of the Watchers",
-      "subclass-9": "Oathbreaker"
+      "subclass-9": "Oathbreaker",
+	  "subclass-10": "Oath of Restlessness",
+	  "subclass-11": "Oath of the Yojimbo",
+	  "subclass-12": "Oath of the Admiral",
+	  "subclass-13": "Oath of the Earthshaker",
+	  "subclass-14": "Oath of Storms",
+	  "subclass-15": "Oath of the Executioner",
+	  "subclass-16": "Oath of Castigation"
     },
+	"homebrew-subclasses":{
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true,
+		"subclass-16": true
+	},
     "subclass-level": 3
   },
   {
@@ -126,10 +232,57 @@
       "subclass-5": "Horizon Walker Conclave",
       "subclass-6": "Hunter Conclave",
       "subclass-7": "Monster Slayer Conclave",
-      "subclass-8": "Swarmkeeper"
+      "subclass-8": "Swarmkeeper",
+	  "subclass-9": "Shoalstrider Conclave",
+	  "subclass-10": "Stormrider Conclave",
+	  "subclass-11": "Comet Caller Conclave",
+	  "subclass-12": "Ronin",
+	  "subclass-13": "Leviathan Hunter Conclave",
+	  "subclass-14": "Big Game Hunter",
+	  "subclass-15": "Field Researcher",
+	  "subclass-16": "Grim Harbinger"
     },
+	"homebrew-subclasses":{
+		"subclass-9": true,
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true,
+		"subclass-16": true
+	},
     "subclass-level": 3
   },
+  {
+	"class":"Rogue",
+	"sub-classes":{
+	  "subclass-1": "Arcane Trickster",
+	  "subclass-2": "Assassin",
+	  "subclass-3": "Inquisitive",
+	  "subclass-4": "Mastermind",
+	  "subclass-5": "Phantom",
+	  "subclass-6": "Scout",
+	  "subclass-7": "Soulknife",
+	  "subclass-8": "Swashbuckler",
+	  "subclass-9": "Thief",
+	  "subclass-10": "Sinner",
+	  "subclass-11": "Fencer",
+	  "subclass-12": "Thronfinger",
+	  "subclass-13": "Tamaya",
+	  "subclass-14": "Poacher",
+	  "subclass-15": "Goldshroud"
+	},
+	"homebrew-subclasses":{
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true
+	},
+	  "subclass-level": 3
+	},
   {
     "class":"Sorcerer",
     "sub-classes":{
@@ -141,8 +294,24 @@
       "subclass-6": "Shadow Magic",
       "subclass-7": "Storm Sorcery",
       "subclass-8": "Wild Magic",
-      "subclass-9": "Pyromancy"
+      "subclass-9": "Pyromancy",
+	  "subclass-10": "Ghost-Touched",
+	  "subclass-11": "Stormborne",
+	  "subclass-12": "Spirit Caller",
+	  "subclass-13": "Merfolk",
+	  "subclass-14": "Verdant",
+	  "subclass-15": "Ironheart",
+	  "subclass-16": "Crimson Sorcerery"
     },
+	"homebrew-subclasses":{
+		"subclass-10": true,
+		"subclass-11": true,
+		"subclass-12": true,
+		"subclass-13": true,
+		"subclass-14": true,
+		"subclass-15": true,
+		"subclass-16": true
+	},
     "subclass-level": 1
   },
   {
@@ -156,8 +325,26 @@
       "subclass-6": "Great Old One",
       "subclass-7": "Hexblade",
       "subclass-8": "Undying",
-      "subclass-9": "Undead"
-    },
+      "subclass-9": "Undead",    
+	  "subclass-10": "Protean",
+	  "subclass-11": "Ghost Ship",
+	  "subclass-12": "Great Tree",
+	  "subclass-13": "The Shinigami",
+	  "subclass-14": "The Dream Whale",
+	  "subclass-15": "Fungus",
+	  "subclass-16": "Great Fool",
+	  "subclass-17": "Horned King"
+	},
+	"homebrew-subclasses":{
+	  "subclass-10": true,
+	  "subclass-11": true,
+	  "subclass-12": true,
+	  "subclass-13": true,
+	  "subclass-14": true,
+	  "subclass-15": true,
+	  "subclass-16": true,
+	  "subclass-17": true
+	},
     "subclass-level": 1
   },
   {
@@ -175,8 +362,40 @@
       "subclass-10": "School of Necromancy",
       "subclass-11": "Order of Scribes",
       "subclass-12": "School of Transmutation",
-      "subclass-13": "School of War Magic"
+      "subclass-13": "School of War Magic",
+	  "subclass-14": "School of Astromancy",
+	  "subclass-15": "School of Exploration",
+	  "subclass-16": "School of Ferromancy",
+	  "subclass-17": "School of Shinobi",
+	  "subclass-18": "School of Schools",
+	  "subclass-19": "Philosopher",
+	  "subclass-20": "Occultist"
     },
+	"homebrew-subclasses":{
+	  "subclass-14": true,
+	  "subclass-15": true,
+	  "subclass-16": true,
+	  "subclass-17": true,
+	  "subclass-18": true,
+	  "subclass-19": true,
+	  "subclass-20": true
+	},
     "subclass-level": 2
+  },
+  {
+    "class": "Blood Hunter",
+    "is-homebrew": true,
+    "sub-classes": {
+      "subclass-1": "Order of the Ghostslayer",
+      "subclass-2": "Order of the Lycan",
+      "subclass-3": "Order of the Mutant",
+      "subclass-4": "Order of the Profane Soul"
+    },
+    "subclass-level": 3,
+    "stat-requirements": {
+      "STR": 13,
+      "DEX": 13,
+      "requirement-type": "OR"
+    }
   }
 ]

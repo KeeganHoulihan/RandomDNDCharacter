@@ -1,127 +1,85 @@
 package Random_Character;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class CharacterGeneratorGUI extends JFrame {
     private static final long serialVersionUID = 1L;
     private JSpinner levelSpinner;
     private JSpinner classesSpinner;
     private JTextArea resultArea;
-    private JButton generateButton;
+    private JCheckBox homebrewCheckbox;
     
     public CharacterGeneratorGUI() {
-        // Set up the frame
-        setTitle("D&D Random Character Generator");
-        setSize(700, 600);
+        setTitle("D&D Character Generator");
+        setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        setLayout(new BorderLayout(10, 10));
         
-        // Create components
-        JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        JPanel inputPanel = new JPanel(new GridBagLayout());
+        inputPanel.setBorder(BorderFactory.createTitledBorder("Character Options"));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
+        gbc.anchor = GridBagConstraints.WEST;
         
-        // Input panel (top)
-        JPanel inputPanel = new JPanel(new GridLayout(2, 2, 10, 10));
+        levelSpinner = new JSpinner(new SpinnerNumberModel(1, 1, 20, 1));
+        classesSpinner = new JSpinner(new SpinnerNumberModel(1, 1, 5, 1));
+        JCheckBox multiclassCheckbox = new JCheckBox("Enforce Multiclass Requirements", true);
+        homebrewCheckbox = new JCheckBox("Include Homebrew Content", false);
         
-        // Level selector
-        inputPanel.add(new JLabel("Character Level (1-20):"));
-        SpinnerNumberModel levelModel = new SpinnerNumberModel(1, 1, 20, 1);
-        levelSpinner = new JSpinner(levelModel);
-        inputPanel.add(levelSpinner);
+        gbc.gridx = 0; gbc.gridy = 0;
+        inputPanel.add(new JLabel("Character Level:"), gbc);
+        gbc.gridx = 1;
+        inputPanel.add(levelSpinner, gbc);
         
-        // Classes selector
-        inputPanel.add(new JLabel("Number of Classes (1-13):"));
-        SpinnerNumberModel classesModel = new SpinnerNumberModel(1, 1, 13, 1);
-        classesSpinner = new JSpinner(classesModel);
-        inputPanel.add(classesSpinner);
+        gbc.gridx = 0; gbc.gridy = 1;
+        inputPanel.add(new JLabel("Max Classes:"), gbc);
+        gbc.gridx = 1;
+        inputPanel.add(classesSpinner, gbc);
         
-        // Result area (center)
-        resultArea = new JTextArea();
+        gbc.gridx = 0; gbc.gridy = 2; gbc.gridwidth = 2;
+        inputPanel.add(multiclassCheckbox, gbc);
+        gbc.gridy = 3;
+        inputPanel.add(homebrewCheckbox, gbc);
+        
+        JButton generateButton = new JButton("Generate Character");
+        gbc.gridy = 4;
+        inputPanel.add(generateButton, gbc);
+        
+        resultArea = new JTextArea(10, 40);
         resultArea.setEditable(false);
-        resultArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
+        resultArea.setBorder(BorderFactory.createTitledBorder("Generated Character"));
         JScrollPane scrollPane = new JScrollPane(resultArea);
         
-        // Button panel (bottom)
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        generateButton = new JButton("Generate Character");
-        generateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                generateCharacter();
-            }
-        });
-        buttonPanel.add(generateButton);
+        add(inputPanel, BorderLayout.NORTH);
+        add(scrollPane, BorderLayout.CENTER);
         
-        // Add components to main panel
-        mainPanel.add(inputPanel, BorderLayout.NORTH);
-        mainPanel.add(scrollPane, BorderLayout.CENTER);
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
-        
-        // Add main panel to frame
-        add(mainPanel);
+        generateButton.addActionListener(e -> generateCharacter(multiclassCheckbox.isSelected()));
+        setLocationRelativeTo(null);
     }
     
-    private void generateCharacter() {
-        int level = (Integer) levelSpinner.getValue();
-        int maxClasses = (Integer) classesSpinner.getValue();
-        
+    private void generateCharacter(boolean enforceMulticlass) {
         try {
-            Character character = new Character(level, maxClasses);
-            StringBuilder result = new StringBuilder();
-            
-            // Fancy header
-            result.append("╔══════════════════════════════════════════════════════════════╗\n");
-            result.append("                 D&D RANDOM CHARACTER SHEET                     \n");
-            result.append("╠══════════════════════════════════════════════════════════════╣\n");
-            
-            // Stats section with the new formatted output
-            result.append("\n").append(character.getStats().toString()).append("\n\n");
-            
-            // Race section
-            result.append("╔══════════════════════════════════════════════════════════════╗\n");
-            result.append(String.format(" RACE: %-56s \n", character.getRace().toString()));
-            result.append("╚══════════════════════════════════════════════════════════════╝\n\n");
-            
-            // Classes section
-            result.append("╔══════════════════════════════════════════════════════════════╗\n");
-            result.append("  CLASSES:                                                      \n");
-            result.append("╠══════════════════════════════════════════════════════════════╣\n");
-            
-            String[] classLines = character.getCharClass().toString().split("\n");
-            for (String line : classLines) {
-                result.append(String.format(" %-60s \n", line));
-            }
-            result.append("╚══════════════════════════════════════════════════════════════╝\n\n");
-            
-            // Background section
-            result.append("╔══════════════════════════════════════════════════════════════╗\n");
-            result.append(String.format(" BACKGROUND: %-50s \n", character.getBackground().toString()));
-            result.append("╚══════════════════════════════════════════════════════════════╝\n\n");
-            
-            // Alignment section
-            result.append("╔══════════════════════════════════════════════════════════════╗\n");
-            result.append(String.format(" ALIGNMENT: %-51s \n", character.getAlignment().toString()));
-            result.append("╚══════════════════════════════════════════════════════════════╝\n");
-            
-            resultArea.setText(result.toString());
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, 
-                "Error generating character: " + ex.getMessage(),
-                "Error", JOptionPane.ERROR_MESSAGE);
-            ex.printStackTrace();
+            int level = (int) levelSpinner.getValue();
+            int maxClasses = (int) classesSpinner.getValue();
+            boolean includeHomebrew = homebrewCheckbox.isSelected();
+
+            Stats stats = new Stats();
+            CharClass charClass = new CharClass(level, maxClasses, stats, enforceMulticlass, includeHomebrew);
+
+            // Use the toString() method for clean output
+            String result = "Generated Character\n\n" +
+                            "Character Stats:\n" + stats.toString() + "\n\n" +
+                            "Character Class Information:\n" + charClass;
+
+            resultArea.setFont(new Font("Monospaced", Font.PLAIN, 12)); // Ensures proper table alignment
+            resultArea.setText(result);
+        } catch (Exception ex) {
+            resultArea.setText("Error generating character: " + ex.getMessage());
         }
     }
+
     
-    // Main method to launch the GUI
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new CharacterGeneratorGUI().setVisible(true);
-            }
-        });
+        SwingUtilities.invokeLater(() -> new CharacterGeneratorGUI().setVisible(true));
     }
 }
