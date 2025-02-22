@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+
+
+
+module Random_Character {
+}
