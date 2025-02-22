@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Build-Jdk-Spec: 23
-Main-Class: Random_Character.CharacterGeneratorGUI
+Main-Class: CharacterGeneratorGUI
 Created-By: Maven Integration for Eclipse
 

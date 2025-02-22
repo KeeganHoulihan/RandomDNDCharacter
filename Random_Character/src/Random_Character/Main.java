@@ -1,4 +1,4 @@
-package Random_Character;
+
 
 import java.util.Scanner;
 import java.io.IOException;

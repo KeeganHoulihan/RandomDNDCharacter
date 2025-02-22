@@ -1,4 +1,4 @@
-package Random_Character;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,8 +24,8 @@ public class Alignment {
 	
 	public String getAlignment()
 	{
-		return alignment;
-	}
+		return alignment; //Returns the characters alignment
+	} 
 	
 	public List<String> loadAlignments() throws IOException 
 	{

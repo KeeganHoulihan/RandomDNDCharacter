@@ -29,7 +29,7 @@
     <configuration>
       <archive>
         <manifest>
-          <mainClass>Random_Character.CharacterGeneratorGUI</mainClass>
+          <mainClass>CharacterGeneratorGUI</mainClass>
         </manifest>
       </archive>
     </configuration>

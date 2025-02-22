@@ -1,4 +1,4 @@
-package Random_Character;
+
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ public class Character {
     private Race characterRace;
 
     public Character(int x, int inMaxClass) throws IOException {
-        this.characterStats = new Stats();
+        this.characterStats = new Stats(null);
         this.characterAlignment = new Alignment();
         this.characterBackground = new Background();
         // Pass the stats to CharClass for multiclass requirements
