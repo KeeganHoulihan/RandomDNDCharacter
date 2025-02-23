@@ -17,7 +17,7 @@ public class Stats {
 
     public Stats(String rollingMethod) // Constructor
     {
-        this.rollingMethod = rollingMethod; // Gets the rolling method
+    	this.rollingMethod = (rollingMethod != null) ? rollingMethod : "4d6 Drop Lowest"; // Gets the rolling method
         generateStats(); //Uses the rolling method to generate stats
         assignAbilityScores(); //Assigns stats to ability scores
     }
@@ -42,7 +42,7 @@ public class Stats {
             case "Standard Array": //Standard stat spread for a dnd character
             	return standardArray(count);
             default:
-                return rollXdYDropLowest(4, 6, 1); // Default to 4d6 drop lowest
+                return standardArray(count); //Default to standard array
         }
     }
 

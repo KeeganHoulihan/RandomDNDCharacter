@@ -1,0 +1,131 @@
+{
+  "classes": {
+    "Artificer": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Arcana", "History", "Investigation", "Medicine", "Nature", "Perception", "Sleight of Hand"]
+      },
+      "tool_proficiencies": ["Thieves' Tools", "Tinker's Tools"],
+      "saving_throws": ["Constitution", "Intelligence"],
+      "is-homebrew": false
+    },
+    "Barbarian": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Strength", "Constitution"],
+      "is-homebrew": false
+    },
+    "Bard": {
+      "skill_proficiencies": {
+        "choose": 3,
+        "from": ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
+      },
+      "tool_proficiencies": ["Three musical instruments of your choice"],
+      "saving_throws": ["Dexterity", "Charisma"],
+      "is-homebrew": false
+    },
+    "Cleric": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["History", "Insight", "Medicine", "Persuasion", "Religion"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Wisdom", "Charisma"],
+      "is-homebrew": false
+    },
+    "Druid": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]
+      },
+      "tool_proficiencies": ["Herbalism Kit"],
+      "saving_throws": ["Intelligence", "Wisdom"],
+      "is-homebrew": false
+    },
+    "Fighter": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Strength", "Constitution"],
+      "is-homebrew": false
+    },
+    "Monk": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
+      },
+      "tool_proficiencies": ["One type of artisan's tools or one musical instrument"],
+      "saving_throws": ["Strength", "Dexterity"],
+      "is-homebrew": false
+    },
+    "Paladin": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Wisdom", "Charisma"],
+      "is-homebrew": false
+    },
+    "Ranger": {
+      "skill_proficiencies": {
+        "choose": 3,
+        "from": ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Strength", "Dexterity"],
+      "is-homebrew": false
+    },
+    "Rogue": {
+      "skill_proficiencies": {
+        "choose": 4,
+        "from": ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"]
+      },
+      "tool_proficiencies": ["Thieves' Tools"],
+      "saving_throws": ["Dexterity", "Intelligence"],
+      "is-homebrew": false
+    },
+    "Sorcerer": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Constitution", "Charisma"],
+      "is-homebrew": false
+    },
+    "Warlock": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Wisdom", "Charisma"],
+      "is-homebrew": false
+    },
+    "Wizard": {
+      "skill_proficiencies": {
+        "choose": 2,
+        "from": ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
+      },
+      "tool_proficiencies": [],
+      "saving_throws": ["Intelligence", "Wisdom"],
+      "is-homebrew": false
+    },
+	    "Blood Hunter": {
+	      "skill_proficiencies": {
+	        "choose": 3,
+	        "from": ["Athletics", "Acrobatics", "Arcana", "History", "Investigation", "Religion"]
+	      },
+	      "tool_proficiencies": ["Alchemist's Supplies"],
+	      "saving_throws": ["Dexterity", "Intelligence"],
+	      "is-homebrew": true,
+	      "source": "Matthew Mercer's Homebrew"
+	    }
+	  }
+	}

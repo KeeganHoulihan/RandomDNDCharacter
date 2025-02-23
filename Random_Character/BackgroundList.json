@@ -1,0 +1,35 @@
+{
+  "backgrounds": {
+    "Acolyte": {
+      "skills": ["Insight", "Religion"],
+      "languages": 2,
+      "tool_proficiencies": [],
+      "is-homebrew": false
+    },
+    "Anthropologist": {
+      "skills": ["Insight", "Religion"],
+      "languages": 2,
+      "tool_proficiencies": [],
+      "is-homebrew": false
+    },
+    "Archaeologist": {
+      "skills": ["History", "Survival"],
+      "languages": 1,
+      "tool_proficiencies": ["Cartographer's Tools"],
+      "is-homebrew": false
+    },
+    "Athlete": {
+      "skills": ["Acrobatics", "Athletics"],
+      "languages": 1,
+      "tool_proficiencies": ["Vehicles (Land)"],
+      "is-homebrew": false
+    },
+    "Monster Hunter": {
+      "skills": ["Investigation", "Survival"],
+      "languages": 1,
+      "tool_proficiencies": ["Alchemist's Supplies"],
+      "is-homebrew": true,
+      "source": "Homebrew Community"
+    }
+  }
+}

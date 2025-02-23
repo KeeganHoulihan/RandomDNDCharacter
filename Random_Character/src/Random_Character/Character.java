@@ -1,5 +1,4 @@
-
-
+import java.util.Map;
 import java.io.IOException;
 
 public class Character {
@@ -8,14 +7,32 @@ public class Character {
     private Background characterBackground;
     private CharClass characterClass;
     private Race characterRace;
+    private SkillProficiency skillProficiency;
 
-    public Character(int x, int inMaxClass) throws IOException {
-        this.characterStats = new Stats(null);
+    public Character(int x, int inMaxClass, String rollingMethod, boolean includeHomebrew) throws IOException {
+        this.characterStats = new Stats(rollingMethod);
         this.characterAlignment = new Alignment();
-        this.characterBackground = new Background();
-        // Pass the stats to CharClass for multiclass requirements
-        this.characterClass = new CharClass(x, inMaxClass, characterStats, true, false);
-        this.characterRace = new Race();
+        this.characterBackground = new Background(includeHomebrew); // Pass homebrew flag
+        this.characterClass = new CharClass(x, inMaxClass, characterStats, true, includeHomebrew);
+        this.characterRace = new Race(includeHomebrew);
+        
+        this.skillProficiency = new SkillProficiency(includeHomebrew);
+        this.skillProficiency.addBackgroundProficiencies(characterBackground.toString());
+        this.skillProficiency.addRaceProficiencies(characterRace.toString());
+        
+        String firstClass = characterClass.getFirstClass();
+        Map<String, Integer> allClasses = characterClass.getClassLevels();
+        
+        // Process each class separately
+        for (String className : allClasses.keySet()) {
+            this.skillProficiency.addClassProficiencies(className, firstClass);
+        }
+    }
+
+
+    // Overloaded constructor for default rolling method
+    public Character(int x, int inMaxClass, boolean includeHomebrew) throws IOException {
+        this(x, inMaxClass, "4d6 Drop Lowest", includeHomebrew);
     }
 
     public Stats getStats() {
@@ -36,5 +53,9 @@ public class Character {
 
     public Race getRace() {
         return characterRace;
+    }
+    
+    public SkillProficiency getSkillProficiency() {
+        return skillProficiency;
     }
 }

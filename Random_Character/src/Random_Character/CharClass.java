@@ -25,6 +25,7 @@ public class CharClass {
     private Stats characterStats; // Reference to character stats for multiclass requirements
     private boolean enforceMulticlassRequirements; // Flag to enforce multiclass requirements
     private boolean includeHomebrew;
+    private String firstClassName;
     
     
     public CharClass(int inLevel, int inMaxClasses, Stats stats) throws IOException {
@@ -54,10 +55,26 @@ public class CharClass {
         cclass = setCharClass;
     }
 
+    public void setFirstClass(String firstClass)
+    {
+    	firstClassName = firstClass;
+    }
+    
+    public String getFirstClass()
+    {
+    	return firstClassName;
+    }
+    
+    
     public Map<String, Object> getCharClass() {
         return cclass;
     }
 
+    public Map<String, Integer> getClassLevels() {
+        return new HashMap<>(classLevels); // Return a copy of the map
+    }
+    
+    
     /**
      * Loads the class data from "ClassList.json" using Gson.
      */
@@ -209,6 +226,7 @@ public class CharClass {
             // For the first class, we don't check stats (PHB rule)
             Map<String, Object> firstClass = getRandomClass(); //Sets the first class randomly
             String firstClassName = (String) firstClass.get("class"); 
+            setFirstClass(firstClassName);
             classLevels.put(firstClassName, 1); //Sets the level of the first class to one
             checkAndAssignSubclass(firstClass, firstClassName); //Check is we can get a subclass (Sorcerer and Warlock)
             

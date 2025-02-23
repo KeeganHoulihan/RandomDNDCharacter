@@ -1,0 +1,40 @@
+{
+  "races": {
+    "Aarakocra": {
+      "skills": [],
+      "languages": ["Common", "Aarakocra", "Auran"],
+      "is-homebrew": false
+    },
+    "Aasimar": {
+      "skills": [],
+      "languages": ["Common", "Celestial"],
+      "is-homebrew": false
+    },
+    "Astral Elf": {
+      "skills": ["Perception"],
+      "languages": ["Common", "Elvish"],
+      "is-homebrew": false
+    },
+    "Elf: High": {
+      "skills": ["Perception"],
+      "languages": ["Common", "Elvish"],
+      "bonus_language": 1,
+      "is-homebrew": false
+    },
+    "Half-Elf": {
+      "skills": {
+        "choose": 2,
+        "from": ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
+      },
+      "languages": ["Common", "Elvish"],
+      "bonus_language": 1,
+      "is-homebrew": false
+    },
+    "Mousefolk": {
+      "skills": ["Stealth", "Perception"],
+      "languages": ["Common", "Squeakish"],
+      "is-homebrew": true,
+      "source": "Homebrew Community"
+    }
+  }
+}
