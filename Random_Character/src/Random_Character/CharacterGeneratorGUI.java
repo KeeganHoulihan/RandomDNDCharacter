@@ -52,39 +52,40 @@ public class CharacterGeneratorGUI extends JFrame {
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setBackground(TAB_BACKGROUND);
         tabbedPane.setForeground(TAB_TEXT_COLOR);
-        
+
         // Style the tabs
         UIManager.put("TabbedPane.selected", TAB_BACKGROUND);
         UIManager.put("TabbedPane.contentAreaColor", PANEL_COLOR);
-        
+
         JPanel statsPanel = new JPanel(new BorderLayout(10, 10));
         statsPanel.setBackground(PANEL_COLOR);
         resultArea = createStyledTextArea();
         statsPanel.add(new JScrollPane(resultArea));
-        
+
         JPanel skillsPanel = new JPanel(new BorderLayout(10, 10));
         skillsPanel.setBackground(PANEL_COLOR);
-        
+
         JPanel equipmentPanel = new JPanel(new BorderLayout(10, 10));
         equipmentPanel.setBackground(PANEL_COLOR);
-        
+
         JPanel spellsPanel = new JPanel(new BorderLayout(10, 10));
         spellsPanel.setBackground(PANEL_COLOR);
-        
+
+
+
         tabbedPane.addTab("Character", statsPanel);
         tabbedPane.addTab("Skills & Proficiencies", skillsPanel);
         tabbedPane.addTab("Equipment", equipmentPanel);
         tabbedPane.addTab("Spells", spellsPanel);
-        
+
         // Style each tab
         for (int i = 0; i < tabbedPane.getTabCount(); i++) {
             tabbedPane.setBackgroundAt(i, TAB_BACKGROUND);
             tabbedPane.setForegroundAt(i, TAB_TEXT_COLOR);
         }
-        
+
         return tabbedPane;
     }
-    
     private JTextArea createStyledTextArea() {
         JTextArea textArea = new JTextArea();
         textArea.setEditable(false);
@@ -224,7 +225,7 @@ public class CharacterGeneratorGUI extends JFrame {
                     "◆ Character Class Information:\n" + character.getCharClass();
 
             resultArea.setText(mainStats);
-            
+
             // Add skill proficiencies to the Skills tab
             JTextArea skillsArea = createStyledTextArea();
             skillsArea.setText(character.getSkillProficiency().toString());
@@ -235,7 +236,6 @@ public class CharacterGeneratorGUI extends JFrame {
             resultArea.setText("⚠ Error generating character: " + ex.getMessage());
         }
     }
-
     public static void main(String[] args) {
         try {
             // Set system look and feel for better integration

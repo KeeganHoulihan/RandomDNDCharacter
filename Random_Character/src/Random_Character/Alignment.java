@@ -9,7 +9,7 @@ import java.util.Random;
 public class Alignment {
 	private String alignment;
     List<String> alignments = new ArrayList<>();
-	private Random random = new Random();
+	private Random random = new Random(System.nanoTime());
 	
 	public Alignment() throws IOException
 	{

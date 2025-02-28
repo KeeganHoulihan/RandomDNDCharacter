@@ -1,4 +1,6 @@
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,76 +11,84 @@ import java.util.Random;
 public class Race {
     private String race;
     private JsonObject raceData;
-    private Random random = new Random();
+    private Random random = new Random(System.nanoTime());
     private boolean includeHomebrew;
-    
+    private List<JsonObject> racesList;
+
     public Race() throws IOException {
         this(false); // Default constructor doesn't include homebrew
     }
-    
+
     public Race(boolean includeHomebrew) throws IOException {
         this.includeHomebrew = includeHomebrew;
-        
+
         // Load and parse JSON data
         Gson gson = new Gson();
-        raceData = gson.fromJson(new FileReader("RaceList.json"), JsonObject.class);
-        
+        JsonObject jsonData = gson.fromJson(new FileReader("RaceList.json"), JsonObject.class);
+        JsonArray racesArray = jsonData.getAsJsonArray("races");
+
+        // Convert the JsonArray to a list of JsonObjects for easier processing
+        racesList = new ArrayList<>();
+        for (JsonElement raceElement : racesArray) {
+            racesList.add(raceElement.getAsJsonObject());
+        }
+
         // Get eligible race names and randomly select one
         List<String> eligibleRaces = getEligibleRaces();
-        race = eligibleRaces.get(random.nextInt(eligibleRaces.size()));
+        String selectedRace = eligibleRaces.get(random.nextInt(eligibleRaces.size()));
+        setRace(selectedRace); // Initialize raceData when selecting a race
     }
-    
+
     private List<String> getEligibleRaces() {
         List<String> eligibleRaces = new ArrayList<>();
-        JsonObject races = raceData.getAsJsonObject("races");
-        
-        for (String raceName : races.keySet()) {
-            JsonObject raceInfo = races.getAsJsonObject(raceName);
-            boolean isHomebrew = raceInfo.has("is-homebrew") && 
-                               raceInfo.get("is-homebrew").getAsBoolean();
-            
+
+        for (JsonObject raceInfo : racesList) {
+            boolean isHomebrew = raceInfo.has("homebrew") && 
+                               raceInfo.get("homebrew").getAsBoolean();
+
             if (includeHomebrew || !isHomebrew) {
-                eligibleRaces.add(raceName);
+                eligibleRaces.add(raceInfo.get("name").getAsString());
             }
         }
-        
+
         return eligibleRaces;
     }
-    
+
     public void setRace(String setRace) {
-        JsonObject races = raceData.getAsJsonObject("races");
-        if (!races.has(setRace)) {
-            throw new IllegalArgumentException("Invalid race: " + setRace);
+        for (JsonObject raceInfo : racesList) {
+            if (raceInfo.get("name").getAsString().equals(setRace)) {
+                boolean isHomebrew = raceInfo.has("homebrew") && 
+                                   raceInfo.get("homebrew").getAsBoolean();
+
+                if (!includeHomebrew && isHomebrew) {
+                    throw new IllegalArgumentException("Homebrew race not allowed: " + setRace);
+                }
+
+                race = setRace;
+                raceData = raceInfo; // Initialize raceData
+                return;
+            }
         }
-        
-        JsonObject raceInfo = races.getAsJsonObject(setRace);
-        boolean isHomebrew = raceInfo.has("is-homebrew") && 
-                           raceInfo.get("is-homebrew").getAsBoolean();
-        
-        if (!includeHomebrew && isHomebrew) {
-            throw new IllegalArgumentException("Homebrew race not allowed: " + setRace);
-        }
-        
-        race = setRace;
+
+        throw new IllegalArgumentException("Invalid race: " + setRace);
     }
-    
+
     public String getRace() {
         return race;
     }
-    
+
     public JsonObject getRaceData() {
-        return raceData.getAsJsonObject("races").getAsJsonObject(race);
+        return raceData;
     }
-    
+
     public boolean isHomebrewEnabled() {
         return includeHomebrew;
     }
-    
+
     @Override
     public String toString() {
-        JsonObject raceInfo = getRaceData();
-        boolean isHomebrew = raceInfo.has("is-homebrew") && 
-                           raceInfo.get("is-homebrew").getAsBoolean();
+        boolean isHomebrew = raceData.has("homebrew") && 
+                           raceData.get("homebrew").getAsBoolean();
         return race + (isHomebrew ? " (Homebrew)" : "");
     }
 }

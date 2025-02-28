@@ -83,7 +83,7 @@ public class Stats {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("╔═════════╦═══════╦══════════╗\n");
-        sb.append("║ Ability ║ Score ║ Modifier \n");
+        sb.append("║ Ability      ║ Score ║ Modifier \n");
         sb.append("╠═════════╬═══════╬══════════╣\n");
         for (String ability : ABILITIES) {
             int score = abilityScores.getOrDefault(ability, 0);

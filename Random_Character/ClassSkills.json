@@ -23,7 +23,10 @@
         "choose": 3,
         "from": ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
       },
-      "tool_proficiencies": ["Three musical instruments of your choice"],
+      "tool_proficiencies":{
+		"choose": 3,
+		"from": ["Bagpipes", "Drum", "Dulcimer", "Flute", "Lute", "Lyre", "Horn", "Pan Flute", "Shawm", "Viol"],
+	  } 
       "saving_throws": ["Dexterity", "Charisma"],
       "is-homebrew": false
     },

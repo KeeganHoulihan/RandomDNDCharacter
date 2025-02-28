@@ -13,13 +13,15 @@ public class Character {
         this.characterStats = new Stats(rollingMethod);
         this.characterAlignment = new Alignment();
         this.characterBackground = new Background(includeHomebrew); // Pass homebrew flag
+        this.characterRace = new Race(includeHomebrew); // Set the race first
         this.characterClass = new CharClass(x, inMaxClass, characterStats, true, includeHomebrew);
-        this.characterRace = new Race(includeHomebrew);
         
+        // Initialize SkillProficiency and add proficiencies
         this.skillProficiency = new SkillProficiency(includeHomebrew);
         this.skillProficiency.addBackgroundProficiencies(characterBackground.toString());
-        this.skillProficiency.addRaceProficiencies(characterRace.toString());
-        
+        this.skillProficiency.addRaceProficiencies(characterRace.getRace()); // Add race skill proficiencies
+        this.skillProficiency.addRaceLanguages(characterRace.getRace()); // Add race languages
+
         String firstClass = characterClass.getFirstClass();
         Map<String, Integer> allClasses = characterClass.getClassLevels();
         
@@ -28,7 +30,6 @@ public class Character {
             this.skillProficiency.addClassProficiencies(className, firstClass);
         }
     }
-
 
     // Overloaded constructor for default rolling method
     public Character(int x, int inMaxClass, boolean includeHomebrew) throws IOException {

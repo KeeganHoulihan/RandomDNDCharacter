@@ -1,40 +1,1444 @@
 {
-  "races": {
-    "Aarakocra": {
-      "skills": [],
-      "languages": ["Common", "Aarakocra", "Auran"],
-      "is-homebrew": false
+  "races": [
+    {
+      "name": "Autognome",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
     },
-    "Aasimar": {
-      "skills": [],
-      "languages": ["Common", "Celestial"],
-      "is-homebrew": false
+    {
+      "name": "Bugbear",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
     },
-    "Astral Elf": {
-      "skills": ["Perception"],
-      "languages": ["Common", "Elvish"],
-      "is-homebrew": false
+    {
+      "name": "Centaur",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
     },
-    "Elf: High": {
-      "skills": ["Perception"],
-      "languages": ["Common", "Elvish"],
-      "bonus_language": 1,
-      "is-homebrew": false
+    {
+      "name": "Changeling",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
     },
-    "Half-Elf": {
-      "skills": {
-        "choose": 2,
-        "from": ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
-      },
-      "languages": ["Common", "Elvish"],
-      "bonus_language": 1,
-      "is-homebrew": false
+    {
+      "name": "Custom Lineage",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
     },
-    "Mousefolk": {
-      "skills": ["Stealth", "Perception"],
-      "languages": ["Common", "Squeakish"],
-      "is-homebrew": true,
-      "source": "Homebrew Community"
+    {
+      "name": "Deep Gnome",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Dhampir",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Dragonborn: Chromatic",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Draconic"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dragonborn: Draconblood",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Draconic"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dragonborn: Gem",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Draconic"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dragonborn: Metallic",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Draconic"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dragonborn: Ravenite",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Draconic"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Duergar",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Dwarvish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dwarf: Hill",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Dwarvish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dwarf: Mountain",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Dwarvish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Dwarf: Mark of Warding",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Dwarvish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Elf: Drow",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: Eladrin",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: High",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: Mark of Shadow",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: Pallid",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: Sea",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish", "Aquan"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: Shadar-kai",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Elf: Wood",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+      "bonusLanguage": false,
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Fairy",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Firbolg",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Genasi: Air",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Genasi: Fire",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Genasi: Earth",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Genasi: Water",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Giff",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Githyanki",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Githzerai",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Gnome: Deep",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Gnomish", "Undercommon"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Gnome: Forest",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Gnomish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Gnome: Rock",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Gnomish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Gnome: Mark of Scribing",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Gnomish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Goblin",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Goliath",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Athletics"]
+    },
+    {
+      "name": "Hadozee",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Aquatic Descent",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Drow Descent",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Mark of Detection",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Mark of Storm",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Moon Elf Descent",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Sun Elf Descent",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Elf: Wood Elf Descent",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Orc",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Orc"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Half-Orc: Mark of Finding",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Orc"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Halfling: Lightfoot",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Halfling"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Halfling: Ghostwise",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Halfling"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Halfling: Lotusden",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Halfling"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Halfling: Mark of Healing",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Halfling"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Halfling: Mark of Hospitality",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Halfling"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Halfling: Stout",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Halfling"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Harengon",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Perception"]
+    },
+    {
+      "name": "Hexblood",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Hobgoblin",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human: Variant",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human: Mark of Handling",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human: Mark of Making",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human: Mark of Passage",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human: Mark of Sentinel",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Human: Variant - Mark of Finding",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Kalashtar",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Quori"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Kender",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Insight", "Investigation", "Sleight of Hand", "Stealth", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Kenku",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseTwo": ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Kobold",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Draconic"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Leonine",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Leonin"],
+      "bonusLanguage": false,
+      "skills": [
+        {
+          "chooseOne": ["Athletics", "Intimidation", "Perception", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Lizardfolk",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Animal Handling", "Medicine", "Nature", "Perception", "Stealth", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Loxodon",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Loxodon"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Minotaur",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Orc",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Owlin",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Stealth"]
+    },
+    {
+      "name": "Plasmoid",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Reborn",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Satyr",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Performance", "Persuasion"]
+    },
+    {
+      "name": "Shifter: Beasthide",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Acrobatics", "Athletics", "Intimidation", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Shifter: Longtooth",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Acrobatics", "Athletics", "Intimidation", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Shifter: Swiftstride",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Acrobatics", "Athletics", "Intimidation", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Shifter: Wildhunt",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Acrobatics", "Athletics", "Intimidation", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Simic Hybrid",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Elvish", "Vedalken"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tabaxi",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Perception", "Stealth"]
+    },
+    {
+      "name": "Thri-kreen",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Asmodeus",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Baalzebul",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Dispater",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Fierna",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Glasya",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Levistus",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Mammon",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Mephistopheles",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Devil's Tongue",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Hellfire",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Winged",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tiefling: Zariel",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Infernal"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Tortle",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Animal Handling", "Medicine", "Nature", "Perception", "Stealth", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Triton",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Vedalken",
+      "homebrew": false,
+      "commonLanguage": ["Common", "Vedalken"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Arcana", "History", "Investigation", "Medicine", "Performance", "Sleight of Hand"]
+        }
+      ]
+    },
+    {
+      "name": "Warforged",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Yuan-Ti",
+      "homebrew": false,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Enkoh: Hulking",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Enkoh: Springtail",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseTwo": ["Acrobatics", "Animal Handling", "Nature", "Performance", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Fuyōren",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Acrobatics", "Animal Handling", "Nature", "Survival", "Performance"]
+        }
+      ]
+    },
+    {
+      "name": "Hanamori",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Intimidation", "Medicine", "Nature", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Haniwa",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Religion", "Perception"]
+    },
+    {
+      "name": "Isetsu",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Athletics", "Perception"]
+    },
+    {
+      "name": "Kitsune",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Kitsune"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Deception", "Persuasion", "Stealth"]
+        }
+      ]
+    },
+    {
+      "name": "Oniborne: Red",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Intimidation"]
+    },
+    {
+      "name": "Oniborne: Blue",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Insight", "Persuasion"]
+    },
+    {
+      "name": "Oniborne: Green",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Performance"]
+    },
+    {
+      "name": "Ryokido",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Acrobatics", "Athletics", "Insight", "Intimidation"]
+        }
+      ]
+    },
+    {
+      "name": "Tatsumi",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Nishikin // Ryūjin",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Tengu: Hanataka",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Tengu: Karasu",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": ["Deception", "Stealth"]
+    },
+    {
+      "name": "Atxayotl: Landbound",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Atxayotl"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Nature", "Persuasion", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Atxayotl: Lagoon",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Atxayotl"],
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": [
+        {
+          "chooseOne": ["Nature", "Persuasion", "Survival"]
+        }
+      ]
+    },
+    {
+      "name": "Ruin-Touched",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Drowned",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Selkie",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Raccling: Lotorite",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Raccish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Raccling: Tanookin",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Raccish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Raccling: Embertail",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Raccish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cavis: Starborn",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Cavi"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cavis: Capya",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Cavi"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cavis: Tundrafoot",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Cavi"],
+      "bonusLanguage": false,
+      "skills": [
+        {
+          "chooseOne": ["Survival", "Nature"]
+        }
+      ]
+    },
+    {
+      "name": "Groakii: Groakar",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Coakii"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Groakii: Groakma",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Coakii"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Lottle: Hapigo",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Lotte"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Lottle: Brackilottle",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Lottle"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Lava Dwarf",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Dwarvish"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Sharkfolk: Hammerhead",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": ["Intimidation"]
+    },
+    {
+      "name": "Sharkfolk: Sawtooth",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Sharkfolk: Sharkfolk",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cactir: Cultivar",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Cactin"],
+      "bonusLanguage": false,
+      "skills": [
+        {
+          "chooseOne": ["Animal Handling", "Nature"]
+        }
+      ]
+    },
+    {
+      "name": "Cactir: Nepenth",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Cactin"],
+      "bonusLanguage": false,
+      "skills": [
+        {
+          "chooseOne": ["Animal Handling", "Nature"]
+        }
+      ]
+    },
+    {
+      "name": "Cephaloid: Octopodans",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cephaloid: Squidlings",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cephaloid: Cuttlefishmans",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Cephaloid: Nautilese",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Octarian",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Octarian"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Gullin",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Auran"],
+      "bonusLanguage": false,
+      "skills": ["Intimidation"]
+    },
+    {
+      "name": "Lobsterfolk",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Aquan"],
+      "bonusLanguage": false,
+      "skills": []
+    },
+    {
+      "name": "Snailfolk",
+      "homebrew": true,
+      "commonLanguage": "Common",
+	  "bonusLanguage": [
+	    {
+	      "chooseOne": ["Celestial", "Draconic", "Giant", "Primordial", "Abyssal", "Deep Speech", "Infernal", "Orc", "Sylvan", "Undercommon", "Goblin", "Dwarvish", "Elvish", "Gnomish"]
+	    }
+	  ],
+      "skills": []
+    },
+    {
+      "name": "Ratfolk",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Squeakish"],
+      "bonusLanguage": false,
+      "skills": ["Athletics", "Perception"]
+    },
+    {
+      "name": "Mousefolk",
+      "homebrew": true,
+      "commonLanguage": ["Common", "Squeakish"],
+      "bonusLanguage": false,
+      "skills": ["Stealth", "Perception"]
     }
-  }
+  ]
 }

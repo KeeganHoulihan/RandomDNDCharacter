@@ -9,7 +9,7 @@ import java.util.Random;
 public class Background {
     private String background;
     private JsonObject backgroundData;
-    private Random random = new Random();
+    private Random random = new Random(System.nanoTime());
     private boolean includeHomebrew;
     
     public Background() throws IOException {

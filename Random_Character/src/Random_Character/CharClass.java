@@ -16,7 +16,7 @@ import com.google.gson.JsonParser;
 public class CharClass {
     private Map<String, Object> cclass; // Map of DND Classes the user has
     private List<Map<String, Object>> classes = new ArrayList<>(); // List of DND classes as maps
-    private Random random = new Random(System.currentTimeMillis()); // Randomizer
+    private Random random = new Random(System.nanoTime()); // Randomizer
     private int level; // User-inputted level
     private int maxClasses; // Max number of classes the user wants
     private int currentLevel; // Current Level of the character
@@ -24,8 +24,8 @@ public class CharClass {
     private Map<String, String> chosenSubclasses; // Tracks chosen subclass for each class
     private Stats characterStats; // Reference to character stats for multiclass requirements
     private boolean enforceMulticlassRequirements; // Flag to enforce multiclass requirements
-    private boolean includeHomebrew;
-    private String firstClassName;
+    private boolean includeHomebrew; //If the user would like to use homebrew or not
+    private String firstClassName; //Gets the name of the first class for proficiency purposes, all other classes are multiclass
     
     
     public CharClass(int inLevel, int inMaxClasses, Stats stats) throws IOException {
@@ -51,25 +51,29 @@ public class CharClass {
         this(inLevel, inMaxClasses, null, false, false);
     }
 
+    //Setter
     public void setCharClass(Map<String, Object> setCharClass) {
-        cclass = setCharClass;
+        cclass = setCharClass; 
     }
 
+    //Setter
     public void setFirstClass(String firstClass)
     {
     	firstClassName = firstClass;
     }
     
+    //Getter
     public String getFirstClass()
     {
     	return firstClassName;
     }
     
-    
+    //Getter
     public Map<String, Object> getCharClass() {
         return cclass;
     }
-
+    
+    //Getter
     public Map<String, Integer> getClassLevels() {
         return new HashMap<>(classLevels); // Return a copy of the map
     }
@@ -79,13 +83,13 @@ public class CharClass {
      * Loads the class data from "ClassList.json" using Gson.
      */
     public List<Map<String, Object>> loadCharClasses() throws IOException {
-        List<Map<String, Object>> classList = new ArrayList<>();
+        List<Map<String, Object>> classList = new ArrayList<>(); //Map of classes the character has
         
-        try (FileReader reader = new FileReader("ClassList.json")) {
-            JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
+        try (FileReader reader = new FileReader("ClassList.json")) { //File Reader
+            JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray(); //Loads the class list as a JSON array
             
             for (int i = 0; i < jsonArray.size(); i++) {
-                JsonObject classObject = jsonArray.get(i).getAsJsonObject();
+                JsonObject classObject = jsonArray.get(i).getAsJsonObject(); //Gets a the class through the JSON array
                 
                 // Check if the class itself is homebrew
                 boolean isClassHomebrew = classObject.has("is-homebrew") && 
@@ -96,37 +100,37 @@ public class CharClass {
                     continue;
                 }
                 
-                String className = classObject.get("class").getAsString();
-                JsonObject subclassesObj = classObject.getAsJsonObject("sub-classes");
-                Map<String, String> subclasses = new HashMap<>();
+                String className = classObject.get("class").getAsString(); //Gets the class string from the JSON object
+                JsonObject subclassesObj = classObject.getAsJsonObject("sub-classes"); //Gets the subclass list as a JSON object
+                Map<String, String> subclasses = new HashMap<>(); //Create a hashmap for the sub classes
                 
                 // Parse homebrew subclass flags
-                Map<String, Boolean> homebrewSubclasses = new HashMap<>();
-                if (classObject.has("homebrew-subclasses")) {
-                    JsonObject homebrewObj = classObject.getAsJsonObject("homebrew-subclasses");
-                    for (String key : homebrewObj.keySet()) {
-                        if (homebrewObj.get(key).isJsonPrimitive()) {
-                            homebrewSubclasses.put(key, homebrewObj.get(key).getAsBoolean());
-                        } else if (homebrewObj.get(key).isJsonObject()) {
-                            JsonObject subclassObj = homebrewObj.get(key).getAsJsonObject();
-                            if (subclassObj.has("enabled")) {
-                                homebrewSubclasses.put(key, subclassObj.get("enabled").getAsBoolean());
+                Map<String, Boolean> homebrewSubclasses = new HashMap<>(); //Create a new hashmap for homebrew subclasses
+                if (classObject.has("homebrew-subclasses")) { //If a class has a homebrew subclass this will run (All of them have homebrew lol)
+                    JsonObject homebrewObj = classObject.getAsJsonObject("homebrew-subclasses"); //Get homebrew classes as a JSON object
+                    for (String key : homebrewObj.keySet()) { //For each key in the homebrew JSON object
+                        if (homebrewObj.get(key).isJsonPrimitive()) { //Check to see if the homebrew key is a Primitive
+                            homebrewSubclasses.put(key, homebrewObj.get(key).getAsBoolean()); //Get the primitive as a boolean
+                        } else if (homebrewObj.get(key).isJsonObject()) { //If the key is a JSON object they it is not homebrew
+                            JsonObject subclassObj = homebrewObj.get(key).getAsJsonObject(); //Get the key as a JSON object, it is a non homebrew subclass
+                            if (subclassObj.has("enabled")) { //If the subclass is enabled TBH i think this doesn't do anything
+                                homebrewSubclasses.put(key, subclassObj.get("enabled").getAsBoolean()); 
                             }
                         }
                     }
                 }
                 
                 // Filter subclasses based on homebrew setting
-                for (String key : subclassesObj.keySet()) {
-                    boolean isSubclassHomebrew = homebrewSubclasses.getOrDefault(key, false);
-                    if (includeHomebrew || !isSubclassHomebrew) {
-                        subclasses.put(key, subclassesObj.get(key).getAsString());
+                for (String key : subclassesObj.keySet()) { //For each key in the SubclassesOBJ 
+                    boolean isSubclassHomebrew = homebrewSubclasses.getOrDefault(key, false); //The default is that a class is not homebrew, if it is homebrew, it will be labled as such in the JSON file
+                    if (includeHomebrew || !isSubclassHomebrew) { //If the subclass is not hombrew
+                        subclasses.put(key, subclassesObj.get(key).getAsString()); //Label it as not homebrew
                     }
                 }
                 
-                long subclassLevel = classObject.get("subclass-level").getAsLong();
+                long subclassLevel = classObject.get("subclass-level").getAsLong(); //Each class has a subclass level that is gotten as a long
                 
-                Map<String, Object> classInfo = new HashMap<>();
+                Map<String, Object> classInfo = new HashMap<>(); //Make a hashmap of classinfo and add all the the needed data
                 classInfo.put("class", className);
                 classInfo.put("sub-classes", subclasses);
                 classInfo.put("subclass-level", subclassLevel);
@@ -136,38 +140,38 @@ public class CharClass {
                 // Add multiclass requirements handling as in your original code
                 addDefaultMulticlassRequirements(classInfo, className);
                 
-                if (classObject.has("stat-requirements")) {
-                    JsonObject requirementsObj = classObject.getAsJsonObject("stat-requirements");
-                    Map<String, Object> requirements = new HashMap<>();
+                if (classObject.has("stat-requirements")) { //If a class has stat requirments... ALL OF THEM LOL
+                    JsonObject requirementsObj = classObject.getAsJsonObject("stat-requirements");  //Get stat requirements from the class object as a JSON object
+                    Map<String, Object> requirements = new HashMap<>(); // Make a hash map of the stat requirements so we can go through them
                     
-                    for (String key : requirementsObj.keySet()) {
-                        JsonElement element = requirementsObj.get(key);
-                        if (element.isJsonPrimitive()) {
-                            if (element.getAsJsonPrimitive().isNumber()) {
-                                requirements.put(key, element.getAsInt());
+                    for (String key : requirementsObj.keySet()) { //For each key in the requirements key set
+                        JsonElement element = requirementsObj.get(key); //Get the key
+                        if (element.isJsonPrimitive()) { //Check if the key is a primitive
+                            if (element.getAsJsonPrimitive().isNumber()) { //If the key is a number
+                                requirements.put(key, element.getAsInt()); //Put the stat requirement into the requirements as an integer
                             } else {
-                                requirements.put(key, element.getAsString());
+                                requirements.put(key, element.getAsString()); //If it is a not a number put it in as a string
                             }
                         }
                     }
                     
-                    classInfo.put("stat-requirements", requirements);
+                    classInfo.put("stat-requirements", requirements); //Put all stat requirements into the class info
                 }
                 
-                classList.add(classInfo);
+                classList.add(classInfo); // Ass the class info to the class list
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        return classList;
+        return classList; //Return the entire classlist 
     }
 
     /**
      * Adds default multiclass prerequisites based on PHB rules if not specified in JSON, which they uh should be there
      */
     private void addDefaultMulticlassRequirements(Map<String, Object> classInfo, String className) {
-        Map<String, Object> requirements = new HashMap<>();
+        Map<String, Object> requirements = new HashMap<>(); //Im being completely honest this should just be in the JSON file... why is it here?
         
         switch (className) {
             case "Artificer":
@@ -216,7 +220,7 @@ public class CharClass {
                 break;
         }
         
-        if (!requirements.isEmpty()) {
+        if (!requirements.isEmpty()) { //If a classes requirements are not empty 
             classInfo.put("stat-requirements", requirements);
         }
     }
@@ -263,7 +267,9 @@ public class CharClass {
             currentLevel++;
         }
     }
-
+    /**
+     * Gets new unique classes for character using the multiclass requirements
+     */
     private Map<String, Object> getNewUniqueClassWithStatCheck() {
         List<Map<String, Object>> availableClasses = new ArrayList<>();
 
@@ -279,10 +285,6 @@ public class CharClass {
     
     @SuppressWarnings("unchecked")
     private boolean meetsStatRequirements(Map<String, Object> classInfo) {
-        // If no stats provided, all classes are valid (for backward compatibility)
-        if (characterStats == null) {
-            return true;
-        }
         
         // If no requirements specified for this class, it's valid
         if (!classInfo.containsKey("stat-requirements")) {
@@ -420,8 +422,7 @@ public class CharClass {
             Map<String, Object> classInfo = getClassInfoByName(className);
             if (classInfo.containsKey("stat-requirements")) {
                 Map<String, Object> requirements = (Map<String, Object>) classInfo.get("stat-requirements");
-                String requirementType = requirements.containsKey("requirement-type") ? 
-                                        (String)requirements.get("requirement-type") : "AND";
+                String requirementType = requirements.containsKey("requirement-type") ? (String)requirements.get("requirement-type") : "AND";
                 
                 StringBuilder failureReason = new StringBuilder();
                 boolean requirementMet = "OR".equals(requirementType) ? false : true;
